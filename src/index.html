@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bs/bootstrap.min.css" >
+    <link rel="stylesheet" href="assets/css/app.css" >
+
+    <title>Campaign Logger jQuery and JS demo</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand">Api Example</a>
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="text" placeholder="Username" aria-label="username" id="user">
+            <input class="form-control mr-sm-2" type="password" placeholder="Password" aria-label="password" id="password" >
+            <div id="initialLoad" class="btn btn-secondary">Load Data</div>
+        </form>
+        
+    </nav>
+    <br>
+    <div class="container-fluid">
+        <ul class="nav nav-tabs" id="clTabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="log-tab" data-toggle="tab" href="#log" role="tab" aria-controls="log" aria-selected="true">Logs</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="logentry-tab" data-toggle="tab" href="#entry" role="tab" aria-controls="entry" aria-selected="false">Logentries</a>
+            </li>
+            
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="log" role="tabpanel" aria-labelledby="log-tab">
+                <div>
+                        <div> 
+                            <br>
+                            <!--<button class="btn btn-secondary" id="showLogList">Show All Logs</button>-->
+                            To edit the name of a Log, just click inside the name field.
+                            <br><br>
+                            <table class="table" id="logs_table">
+                            <tbody>
+                                
+                            </tbody>
+                            </table>
+                            <br><br>
+                        </div>
+                        <div>
+                            Raw:
+                            <br>
+                            <code id="rawData"></code>
+                        </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="entry" role="tabpanel" aria-labelledby="logentry-tab">
+                    <div>
+                            <div>
+                                    
+                                <br>
+                                <h1 id="detailTitle"></h1>
+                                <br><br>
+                                <div id="textFieldNewEntry">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Create a new Entry</span>
+                                        </div>
+                                        <textarea class="form-control" aria-label="With textarea" id="newLogEntry"></textarea>
+                                        <div class="input-group-append" id="newEntryButton">
+                                            
+                                        </div>
+                                    </div> 
+                                </div>
+                                <br><br>
+                                <div id="detailCard">       
+                                </div>
+                                <br><br>
+                            </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="assets/js/bs/bootstrap.min.js"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>
