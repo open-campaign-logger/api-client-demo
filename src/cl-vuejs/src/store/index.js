@@ -20,6 +20,9 @@ const store = new Vuex.Store({
     fillLogs (state, n) {
       state.campaignLogs = n
     },
+    fillEntries (state, n) {
+      state.logEntries = n
+    },
     changeDetail (state, id) {
       state.logDetail = id
     }

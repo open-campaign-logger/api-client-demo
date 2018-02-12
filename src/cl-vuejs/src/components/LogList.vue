@@ -5,10 +5,11 @@
         <a class="nav-link" href="#" @click="changeDetailView(log.id)">{{log.name}}</a>
       </li>
     </ul>
+      <div class="card flex-column" style="width: 80%;" >
+        <detail-view v-if="this.$store.state.logDetail">
 
-    <div class="card flex-column" style="width: 80%;">
-      <detail-view></detail-view>
-    </div>
+        </detail-view>
+      </div>
   </div>
 </template>
 
@@ -27,11 +28,28 @@ export default {
     }
   },
   components: {
-    'detail-view': DetailView,
+    'detail-view': DetailView
   },
   methods: {
     changeDetailView (id) {
-      this.$store.commit("changeDetail", id)
+      this.$store.commit('changeDetail', id)
+      this.getDetails(id)
+    },
+    getDetails (id) {
+      var self = this
+      axios.get('https://campaign-logger.com/gateway/rest/public/log/' + id + '/entry', {
+        headers: {
+          'CL-Username': this.$store.state.user,
+          'CL-Password': this.$store.state.password
+        }
+      })
+        .then(response => {
+          console.log(response.data)
+          self.$store.commit('fillEntries', response.data)
+        })
+        .catch(error => {
+          console.log(error)
+        })
     }
   },
   mounted () {
