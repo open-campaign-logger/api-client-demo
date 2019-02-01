@@ -57,3 +57,5 @@ typings/
 # dotenv environment variables file
 .env
 
+/src/python/generator/.vscode/launch.json
+/src/python/generator/.vscode/settings.json
